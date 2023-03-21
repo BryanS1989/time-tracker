@@ -3,7 +3,7 @@ import TimeTracker from '../components/TimeTracker.vue';
 </script>
 
 <template>
-	<main>
-		<TimeTracker />
-	</main>
+    <main>
+        <TimeTracker />
+    </main>
 </template>
