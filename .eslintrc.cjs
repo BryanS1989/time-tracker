@@ -13,4 +13,13 @@ module.exports = {
     parserOptions: {
         ecmaVersion: 'latest',
     },
+    rules: {
+        'prettier/prettier': [
+            'error',
+            {
+                tabWidth: 4,
+                singleQuote: true,
+            },
+        ],
+    },
 };
