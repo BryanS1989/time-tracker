@@ -1,7 +1,7 @@
-import type Employee from "@/interfaces/Employee.interface";
-import type WorkEntry from "@/interfaces/WorkEntry.interface";
+import type Employee from '@/interfaces/Employee.interface';
+import type WorkEntry from '@/interfaces/WorkEntry.interface';
 
-import type { WorkEntryType } from "@/Enums/enums";
+import type { WorkEntryType } from '@/Enums/enums';
 
 export interface WorkEntryData {
     id: string;

@@ -1,6 +1,6 @@
-import type Company from "@/interfaces/Company.interface";
+import type Company from '@/interfaces/Company.interface';
 
-import type { WorkStatus, IdentityNumberType, Status } from "@/Enums/enums";
+import type { WorkStatus, IdentityNumberType, Status } from '@/Enums/enums';
 
 export default interface Employee {
     id: string;

@@ -1,6 +1,6 @@
-import type Coordinates from "@/interfaces/Coordinates.interface";
+import type Coordinates from '@/interfaces/Coordinates.interface';
 
-import type { Origin } from "@/Enums/enums";
+import type { Origin } from '@/Enums/enums';
 
 export default interface WorkEntry {
     origin: Origin;

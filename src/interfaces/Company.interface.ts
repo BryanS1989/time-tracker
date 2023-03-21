@@ -1,4 +1,4 @@
-import type { Language } from "@/Enums/enums";
+import type { Language } from '@/Enums/enums';
 
 export default interface Company {
     id: string;
