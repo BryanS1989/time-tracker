@@ -4,6 +4,10 @@ import TimeTracker from '../components/TimeTracker.vue';
 
 <template>
     <main>
-        <TimeTracker />
+        <section class="wrapper rounded">
+            <TimeTracker />
+
+            <hr />
+        </section>
     </main>
 </template>
