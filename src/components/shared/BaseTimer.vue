@@ -68,9 +68,7 @@ const elapsedTime = computed(() => {
 });
 
 const entryTime = computed(() => {
-    let timeUTC = new Date(state.clockInTime);
-
-    return timeUTC.toLocaleTimeString('es-ES', {
+    return new Date(state.clockInTime).toLocaleTimeString('es-ES', {
         hour: '2-digit',
         minute: '2-digit',
         second: '2-digit',
