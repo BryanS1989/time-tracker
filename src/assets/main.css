@@ -17,6 +17,10 @@
     border-radius: var(--border-radius);
 }
 
+.text--secondary {
+    color: var(--black-light);
+}
+
 .app__button {
     color: var(--color-text-secondary);
     border-radius: var(--border-radius);
