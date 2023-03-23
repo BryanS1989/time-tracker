@@ -1,39 +1,33 @@
 /* color palette from <https://github.com/vuejs/theme> */
 :root {
-    --vt-c-white: #ffffff;
+    --white: #ffffff;
 
-    --vt-c-black: #181818;
+    --gray: #f4f4f4;
+    --gray-dark: #e7e7e7;
 
-    --vt-c-indigo: #2c3e50;
+    --black: #3f3f3f;
 
-    --vt-c-divider-light-1: rgba(60, 60, 60, 0.29);
-    --vt-c-divider-light-2: rgba(60, 60, 60, 0.12);
-    --vt-c-divider-dark-1: rgba(84, 84, 84, 0.65);
-    --vt-c-divider-dark-2: rgba(84, 84, 84, 0.48);
+    --green-light: #75b798;
 
-    --vt-c-text-light-1: var(--vt-c-indigo);
-    --vt-c-text-dark-2: rgba(235, 235, 235, 0.64);
+    --primary: #0d6efd;
+    --secondary: #676d73;
+    --success: #198754;
+    --danger: #dc3545;
+
+    --border-radius: 5rem;
+    --border-color: #bbbbbb;
 }
 
 /* semantic color variables for this project */
 :root {
-    --color-background: var(--vt-c-white);
+    --color-background: var(--gray);
 
-    --color-border: var(--vt-c-divider-light-2);
-    --color-border-hover: var(--vt-c-divider-light-1);
+    --color-background-primary: var(--white);
+    --color-background-secondary: var(--gray-dark);
 
-    --color-text: var(--vt-c-text-light-1);
-}
-
-@media (prefers-color-scheme: dark) {
-    :root {
-        --color-background: var(--vt-c-black);
-
-        --color-border: var(--vt-c-divider-dark-2);
-        --color-border-hover: var(--vt-c-divider-dark-1);
-
-        --color-text: var(--vt-c-text-dark-2);
-    }
+    --color-text: var(--black);
+    --color-text-hover: var(--green-light);
+    --color-text-secondary: var(--white);
 }
 
 *,
@@ -49,7 +43,6 @@ body {
     min-height: 100vh;
     color: var(--color-text);
     background: var(--color-background);
-    transition: color 0.5s, background-color 0.5s;
     line-height: 1.6;
     font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
         Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
@@ -57,4 +50,15 @@ body {
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+    text-decoration: none;
+    color: var(--success);
+}
+
+@media (hover: hover) {
+    a:hover {
+        color: var(--color-text-hover);
+    }
 }
