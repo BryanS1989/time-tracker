@@ -51,26 +51,26 @@ const toglePause = () => {
         ></BaseTimer>
 
         <BaseButton
-            :text="'Entrar'"
             :extra-class="'button--success'"
             @click="clockIn()"
             v-if="!state.checkIn"
         >
+            <span>Entrar</span>
         </BaseButton>
 
         <div v-else>
             <BaseButton
-                :text="'Pausar'"
                 :extra-class="'button--secondary'"
                 @click="clockPause()"
             >
+                <span>Pausar</span>
             </BaseButton>
 
             <BaseButton
-                :text="'Salir'"
                 :extra-class="'button--danger'"
                 @click="clockOut()"
             >
+                <span>Salir</span>
             </BaseButton>
         </div>
     </div>
