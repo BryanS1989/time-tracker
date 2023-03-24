@@ -110,7 +110,7 @@ export const usetimeTrackerStore = defineStore('timeTracker', () => {
                         coordinates: {
                             latitude: coordinates.latitude,
                             longitude: coordinates.longitude,
-                        }
+                        },
                     },
                 };
 
