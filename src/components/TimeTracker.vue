@@ -7,6 +7,7 @@ import { usetimeTrackerStore } from '@/stores/timeTracker';
 const state = reactive({
     checkIn: false,
     pause: false,
+    elapsedTime: 0,
 });
 
 const clockIn = () => {
@@ -48,6 +49,7 @@ watch(
     () => {
         console.log('[ProfilePreview] [WATCH] [usetimeTrackerStore().userStatus]');
         state.checkIn = usetimeTrackerStore().userStatus === 'online';
+        state.elapsedTime = usetimeTrackerStore().elapsedTime;
     }
 );
 </script>
@@ -57,7 +59,7 @@ watch(
         <BaseTimer
             :start-count="state.checkIn"
             :pause="state.pause"
-            :show-start-time="state.checkIn"
+            :elapsed-time="state.elapsedTime"
             @time-action="registerTime"
         ></BaseTimer>
 

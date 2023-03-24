@@ -10,9 +10,9 @@ const props = defineProps({
         type: Boolean,
         default: false,
     },
-    showStartTime: {
-        type: Boolean,
-        default: false,
+    elapsedTime: {
+        type: Number,
+        default: 0,
     },
 });
 
@@ -36,7 +36,7 @@ watch(
 
         if (props.startCount) {
             state.clockInTime = actionTime;
-            state.counter = 0;
+            state.counter = props.elapsedTime;
             if (state.interval === 0) {
                 state.interval = window.setInterval(addSecond, 1000);
             }
