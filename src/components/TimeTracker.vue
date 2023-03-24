@@ -1,7 +1,8 @@
 <script setup lang="ts">
-import { reactive } from 'vue';
+import { reactive, watch } from 'vue';
 import BaseButton from '@/components/shared/BaseButton.vue';
 import BaseTimer from '@/components/shared/BaseTimer.vue';
+import { usetimeTrackerStore } from '@/stores/timeTracker';
 
 const state = reactive({
     checkIn: false,
@@ -12,6 +13,7 @@ const clockIn = () => {
     console.log('[TimeTracker] [clockIn]');
     togleCheckIn();
     state.pause = false;
+    usetimeTrackerStore().clockIn();
 };
 
 const clockPause = () => {
@@ -23,6 +25,7 @@ const clockOut = () => {
     console.log('[TimeTracker] [clockOut]');
     console.log('Salida');
     togleCheckIn();
+    usetimeTrackerStore().clockOut();
 };
 
 const registerTime = (date: string) => {
@@ -39,6 +42,14 @@ const togleCheckIn = () => {
 const toglePause = () => {
     state.pause = !state.pause;
 };
+
+watch(
+    () => usetimeTrackerStore().userStatus,
+    () => {
+        console.log('[ProfilePreview] [WATCH] [usetimeTrackerStore().userStatus]');
+        state.checkIn = usetimeTrackerStore().userStatus === 'online';
+    }
+);
 </script>
 
 <template>
