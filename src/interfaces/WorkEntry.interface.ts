@@ -4,6 +4,6 @@ import type { Origin } from '@/Enums/enums';
 
 export default interface WorkEntry {
     origin: Origin;
-    date: Date;
+    date: string;
     coordinates: Coordinates;
 }
