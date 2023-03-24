@@ -1,5 +1,13 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router';
+import { onBeforeMount } from 'vue';
+import { usetimeTrackerStore } from './stores/timeTracker';
+
+onBeforeMount(() => {
+    console.log('[APP] [onBeforeMount]');
+
+    usetimeTrackerStore().getWorkEntries();
+});
 </script>
 
 <template>

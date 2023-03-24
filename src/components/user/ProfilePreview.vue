@@ -1,6 +1,7 @@
 <script setup lang="ts">
-import { reactive, onBeforeMount } from 'vue';
+import { reactive, watch } from 'vue';
 import defaultProfileThumbnail from '@/assets/images/profile_thumbnail.jpg';
+import { usetimeTrackerStore } from '@/stores/timeTracker';
 
 const state = reactive({
     name: 'User Name',
@@ -8,9 +9,13 @@ const state = reactive({
     status: 'offline',
 });
 
-onBeforeMount(() => {
-    console.log('[ProfilePreview] [onBeforeMount]');
-});
+watch(
+    () => usetimeTrackerStore().userStatus,
+    () => {
+        console.log('[ProfilePreview] [WATCH] [usetimeTrackerStore().userStatus]');
+        state.status = usetimeTrackerStore().userStatus;
+    }
+);
 </script>
 
 <template>
@@ -36,6 +41,7 @@ onBeforeMount(() => {
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+    width: 100%;
 }
 
 figure {
