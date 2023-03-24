@@ -42,7 +42,7 @@ const toglePause = () => {
 </script>
 
 <template>
-    <div>
+    <div class="time--tracker display-flex px-1 mx-1">
         <BaseTimer
             :start-count="state.checkIn"
             :pause="state.pause"

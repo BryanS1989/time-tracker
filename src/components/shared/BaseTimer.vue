@@ -38,10 +38,10 @@ watch(
             state.clockInTime = actionTime;
             state.counter = 0;
             if (state.interval === 0) {
-                state.interval = setInterval(addSecond, 1000);
+                state.interval = window.setInterval(addSecond, 1000);
             }
         } else {
-            clearInterval(state.interval);
+            window.clearInterval(state.interval);
             state.interval = 0;
         }
     }
@@ -77,13 +77,25 @@ const entryTime = computed(() => {
 </script>
 
 <template>
-    <p>
+    <p class="base--timer display-flex mx-1">
         <span>{{ elapsedTime }}</span>
         <span
             v-if="props.startCount"
-            class="text--secondary"
+            class="text-secondary"
         >
-            / {{ entryTime }}</span
+            /
+        </span>
+        <span
+            v-if="props.startCount"
+            class="text-secondary"
         >
+            {{ entryTime }}
+        </span>
     </p>
 </template>
+
+<style>
+.base--timer {
+    width: 10rem;
+}
+</style>

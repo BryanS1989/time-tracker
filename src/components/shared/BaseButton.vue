@@ -20,7 +20,7 @@ const clickedButton = () => {
     <button
         :disabled="disabled"
         @click="clickedButton"
-        :class="`app__button ${extraClass} rounded`"
+        :class="`app__button ${extraClass} rounded mx-1`"
     >
         <slot> Button </slot>
     </button>
