@@ -1,9 +1,5 @@
 <script setup lang="ts">
-const props = defineProps({
-    text: {
-        type: String,
-        required: true,
-    },
+defineProps({
     disabled: {
         type: Boolean,
         default: false,
@@ -24,8 +20,8 @@ const clickedButton = () => {
     <button
         :disabled="disabled"
         @click="clickedButton"
-        :class="`app__button ${extraClass} rounded`"
+        :class="`app__button ${extraClass} rounded mx-1`"
     >
-        {{ text }}
+        <slot> Button </slot>
     </button>
 </template>

@@ -4,7 +4,7 @@ import { RouterLink, RouterView } from 'vue-router';
 
 <template>
     <header>
-        <h1>Time Tracker</h1>
+        <h1 class="my-2">Time Tracker</h1>
         <nav>
             <RouterLink to="/">Registro de Tiempo</RouterLink>
         </nav>
