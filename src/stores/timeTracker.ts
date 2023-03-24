@@ -22,7 +22,7 @@ export const usetimeTrackerStore = defineStore('timeTracker', () => {
         return workEntryData.employee.id;
     });
 
-    const userName = computed(() => {
+    const userName = computed((): string => {
         const userName = workEntryData.employee.lastName
             ? workEntryData.employee.firstName + ' ' + workEntryData.employee.lastName
             : workEntryData.employee.firstName;
@@ -39,6 +39,19 @@ export const usetimeTrackerStore = defineStore('timeTracker', () => {
         );
         return workEntryData.employee.workStatus;
     });
+
+
+    const elapsedTime = computed(() => {
+        console.log('[STORE] [usetimeTrackerStore] [elapsedTime] ');
+        if (workEntryData.employee && workEntryData.employee.workStatus === 'online') {
+            // TODO If user was online then calculate the time since last workEntryIn to add it to current worked time
+            // return (Date.now() - Date.parse(workEntryData.clockIn.date)) / 1000;
+            return 0;
+        } else {
+            return 0;
+        }
+    });
+
 
     function getWorkEntries() {
         console.log('[STORE] [usetimeTrackerStore] [getWorkEntries]');
@@ -135,6 +148,7 @@ export const usetimeTrackerStore = defineStore('timeTracker', () => {
     return {
         userName,
         userStatus,
+        elapsedTime,
         clockIn,
         clockOut,
         getWorkEntries,
