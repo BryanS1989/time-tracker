@@ -1,13 +1,14 @@
 <script setup lang="ts">
 import TimeTracker from '../components/TimeTracker.vue';
+import ProfilePreview from '@/components/user/ProfilePreview.vue';
 </script>
 
 <template>
-    <main>
-        <section class="wrapper rounded">
+    <main class="display-flex p-3">
+        <section class="wrapper display-flex rounded p-2 py-1">
             <TimeTracker />
 
-            <hr />
+            <ProfilePreview></ProfilePreview>
         </section>
     </main>
 </template>
