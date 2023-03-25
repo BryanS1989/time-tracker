@@ -20,6 +20,7 @@ const clockIn = () => {
 const clockPause = () => {
     console.log('[TimeTracker] [clockPause]');
     toglePause();
+    usetimeTrackerStore().pauseClock(state.pause);
 };
 
 const clockOut = () => {
@@ -48,13 +49,13 @@ watch(
     () => usetimeTrackerStore().userStatus,
     () => {
         console.log('[ProfilePreview] [WATCH] [usetimeTrackerStore().userStatus]');
-        state.checkIn = usetimeTrackerStore().userStatus === 'online';
+        state.checkIn = ['online', 'paused'].includes(usetimeTrackerStore().userStatus);
         state.elapsedTime = usetimeTrackerStore().elapsedTime;
     }
 );
 
-const screenSize = computed(() => {
-    return window.screen.availWidth;
+const isMobile = computed(() => {
+    return window.screen.availWidth > 640;
 });
 </script>
 
@@ -72,7 +73,7 @@ const screenSize = computed(() => {
             @click="clockIn()"
             v-if="!state.checkIn"
         >
-            <span v-if="screenSize > 768">Entrar</span>
+            <span v-if="isMobile">Entrar</span>
             <div v-else>
                 <font-awesome-icon :icon="['fas', 'play']" />
             </div>
@@ -86,7 +87,7 @@ const screenSize = computed(() => {
                 :extra-class="'button--secondary'"
                 @click="clockPause()"
             >
-                <span v-if="screenSize > 768">Pausar</span>
+                <span v-if="isMobile">Pausar</span>
                 <div v-else>
                     <font-awesome-icon :icon="['fas', 'pause']" />
                 </div>
@@ -96,7 +97,7 @@ const screenSize = computed(() => {
                 :extra-class="'button--danger'"
                 @click="clockOut()"
             >
-                <span v-if="screenSize > 768">Salir</span>
+                <span v-if="isMobile">Salir</span>
                 <div v-else>
                     <font-awesome-icon :icon="['fas', 'stop']" />
                 </div>
