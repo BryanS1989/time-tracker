@@ -1,6 +1,6 @@
 export interface MenuItem {
     text: string;
-    custom?: Boolean,
+    custom?: Boolean;
     position?: string;
     children?: MenuItem[];
 }
