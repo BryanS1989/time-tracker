@@ -16,6 +16,14 @@ watch(
         state.status = usetimeTrackerStore().userStatus;
     }
 );
+
+watch(
+    () => usetimeTrackerStore().userName,
+    () => {
+        console.log('[ProfilePreview] [WATCH] [usetimeTrackerStore().userName]');
+        state.name = usetimeTrackerStore().userName;
+    }
+);
 </script>
 
 <template>
