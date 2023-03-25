@@ -78,16 +78,16 @@ const entryTime = computed(() => {
 
 <template>
     <p class="base--timer display-flex mx-1">
-        <span>{{ elapsedTime }}</span>
+        <span class="text-center text-unselectable">{{ elapsedTime }}</span>
         <span
             v-if="props.startCount"
-            class="text-secondary"
+            class="text-secondary text-center text-unselectable"
         >
             /
         </span>
         <span
             v-if="props.startCount"
-            class="text-secondary"
+            class="text-secondary text-center text-unselectable"
         >
             {{ entryTime }}
         </span>

@@ -1,6 +1,32 @@
 <script setup lang="ts">
 import TimeTracker from '../components/TimeTracker.vue';
 import ProfilePreview from '@/components/user/ProfilePreview.vue';
+import BaseDropDown from '@/components/shared/BaseDropDown.vue';
+import type { MenuItem } from '@/interfaces/MenuItem.interface';
+
+const menuItems: MenuItem[] = [
+    {
+        text: 'Mis cuentas',
+        position: 'left',
+        children: [
+            {
+                text: 'Cuenta 1',
+            },
+            {
+                text: 'Cuenta 2',
+            },
+        ],
+    },
+    {
+        text: 'Vista empleado',
+    },
+    {
+        text: 'Mi perfil',
+    },
+    {
+        text: 'Cerrar sesión',
+    },
+];
 </script>
 
 <template>
@@ -8,7 +34,11 @@ import ProfilePreview from '@/components/user/ProfilePreview.vue';
         <section class="wrapper display-flex rounded p-2 py-1">
             <TimeTracker />
 
-            <ProfilePreview></ProfilePreview>
+            <BaseDropDown :list-items="menuItems">
+                <template #activator>
+                    <ProfilePreview></ProfilePreview>
+                </template>
+            </BaseDropDown>
         </section>
     </main>
 </template>
