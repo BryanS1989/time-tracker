@@ -25,3 +25,48 @@ const clickedButton = () => {
         <slot> Button </slot>
     </button>
 </template>
+
+<style>
+.app__button {
+    color: var(--color-text-secondary);
+    border-radius: var(--border-radius);
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    width: 10rem;
+    font-weight: 500;
+}
+
+.button--success {
+    background-color: var(--success);
+}
+
+.button--secondary {
+    background-color: var(--secondary);
+}
+
+.button--danger {
+    background-color: var(--danger);
+}
+
+@media (hover: hover) {
+    .app__button:hover {
+        opacity: 0.8;
+        transform: scale(1.1);
+        box-shadow: 0px 5px 5px var(--black-lighter);
+    }
+}
+
+@media (max-width: 768px) {
+    .app__button {
+        width: 5rem;
+    }
+}
+
+@media (max-width: 425px) {
+    .app__button {
+        width: 2rem;
+        margin: 2px;
+    }
+}
+</style>

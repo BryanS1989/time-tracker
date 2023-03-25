@@ -60,9 +60,14 @@ div[class^='status-'] {
     height: 0.8rem;
     top: 0;
     right: 0;
+    border: 0.5px solid var(--black-lighter);
 }
 
 @media (max-width: 425px) {
+    .profile--preview {
+        width: auto;
+    }
+
     .profile--name {
         display: none;
     }

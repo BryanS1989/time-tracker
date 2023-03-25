@@ -98,4 +98,11 @@ const entryTime = computed(() => {
 .base--timer {
     width: 10rem;
 }
+
+@media (max-width: 425px) {
+    .base--timer {
+        width: 10rem;
+        margin: 2px;
+    }
+}
 </style>

@@ -40,7 +40,6 @@ export const usetimeTrackerStore = defineStore('timeTracker', () => {
         return workEntryData.employee.workStatus;
     });
 
-
     const elapsedTime = computed(() => {
         console.log('[STORE] [usetimeTrackerStore] [elapsedTime] ');
         if (workEntryData.employee && workEntryData.employee.workStatus === 'online') {
@@ -51,7 +50,6 @@ export const usetimeTrackerStore = defineStore('timeTracker', () => {
             return 0;
         }
     });
-
 
     function getWorkEntries() {
         console.log('[STORE] [usetimeTrackerStore] [getWorkEntries]');

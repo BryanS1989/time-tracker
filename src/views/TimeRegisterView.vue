@@ -12,3 +12,15 @@ import ProfilePreview from '@/components/user/ProfilePreview.vue';
         </section>
     </main>
 </template>
+
+<style>
+@media (max-width: 425px) {
+    main {
+        padding: 8px;
+    }
+
+    section.wrapper {
+        padding: 8px;
+    }
+}
+</style>

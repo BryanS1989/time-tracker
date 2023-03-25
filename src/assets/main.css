@@ -127,6 +127,7 @@
     background-color: var(--color-background-secondary);
     border-radius: var(--border-radius);
     width: max-content;
+    box-shadow: 5px 5px 10px var(--black-lighter);
 }
 
 .wrapper > :nth-child(even) {
@@ -163,34 +164,6 @@
 
 .status-offline {
     background-color: var(--danger);
-}
-
-.app__button {
-    color: var(--color-text-secondary);
-    border-radius: var(--border-radius);
-    border: none;
-    cursor: pointer;
-    padding: 0.5rem;
-    width: 10rem;
-    font-weight: 500;
-}
-
-.button--success {
-    background-color: var(--success);
-}
-
-.button--secondary {
-    background-color: var(--secondary);
-}
-
-.button--danger {
-    background-color: var(--danger);
-}
-
-@media (hover: hover) {
-    .app__button:hover {
-        opacity: 0.8;
-    }
 }
 
 @media (min-width: 1024px) {
