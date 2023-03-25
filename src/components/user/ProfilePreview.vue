@@ -1,7 +1,18 @@
 <script setup lang="ts">
-import { reactive, watch } from 'vue';
+import { reactive, watch, onBeforeMount } from 'vue';
 import defaultProfileThumbnail from '@/assets/images/profile_thumbnail.jpg';
 import { usetimeTrackerStore } from '@/stores/timeTracker';
+
+defineProps({
+    showCurrentStatus: {
+        type: Boolean,
+        default: true,
+    },
+    showLasTime: {
+        type: Boolean,
+        default: false,
+    },
+});
 
 const state = reactive({
     name: 'User Name',
@@ -24,21 +35,42 @@ watch(
         state.name = usetimeTrackerStore().userName;
     }
 );
+
+onBeforeMount(() => {
+    console.log('[ProfilePreview] [onBeforeMount]');
+    if (usetimeTrackerStore().userStatus) {
+        state.status = usetimeTrackerStore().userStatus;
+    }
+    if (usetimeTrackerStore().userName) {
+        state.name = usetimeTrackerStore().userName;
+    }
+});
 </script>
 
 <template>
     <section class="profile--preview display-flex justify-left px-2">
         <figure class="display-flex">
             <img
-                class="profile--thumbnail circle"
+                class="profile--thumbnail circle m-1"
                 :src="state.avatar"
                 alt="User profile thumbnail"
             />
-            <div :class="`status-${state.status} circle`"></div>
+            <div
+                :class="`status-${state.status} circle`"
+                v-if="showCurrentStatus"
+            ></div>
         </figure>
-        <p class="profile--name text-xl text-strong mx-1 text-center text-unselectable">
-            {{ state.name }}
-        </p>
+        <div>
+            <p class="profile--name text-xl text-strong mx-1 text-unselectable">
+                {{ state.name }}
+            </p>
+            <p
+                v-if="showLasTime"
+                class="profile--last-time mx-1 text-secondary text-sm text-unselectable"
+            >
+                Hoy llevas 00:00
+            </p>
+        </div>
     </section>
 </template>
 
@@ -68,8 +100,8 @@ div[class^='status-'] {
     position: absolute;
     width: 0.8rem;
     height: 0.8rem;
-    top: 0;
-    right: 0;
+    top: 0.5rem;
+    right: 0.5rem;
     border: 0.5px solid var(--black-lighter);
 }
 
