@@ -127,6 +127,7 @@
     background-color: var(--color-background-secondary);
     border-radius: var(--border-radius);
     width: max-content;
+    box-shadow: 5px 5px 10px var(--black-lighter);
 }
 
 .wrapper > :nth-child(even) {
@@ -190,6 +191,8 @@
 @media (hover: hover) {
     .app__button:hover {
         opacity: 0.8;
+        transform: scale(1.1);
+        box-shadow: 0px 5px 5px var(--black-lighter);
     }
 }
 
