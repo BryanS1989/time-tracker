@@ -99,19 +99,26 @@ const fold = () => {
 
 .dropdown > svg {
     position: absolute;
-    top: 0.8rem;
+    top: 0;
+    bottom: 0;
     right: 0;
+    margin: auto 0;
 }
 
 .dropdown-left > svg {
-    top: 1.3rem;
+    bottom: 0;
+    top: 0;
+    right: 0;
     left: 1rem;
+    margin: auto 0;
     rotate: 90deg;
 }
 
 .dropdown-right > svg {
-    top: 1.3rem;
+    bottom: 0;
+    top: 0;
     right: 1rem;
+    margin: auto 0;
     rotate: 270deg;
 }
 
@@ -179,6 +186,12 @@ const fold = () => {
 
     .dropdown--item:hover {
         background-color: var(--green-light);
+    }
+}
+
+@media (max-width: 640px) {
+    .dropdown--menu-container {
+        width: max-content;
     }
 }
 </style>
