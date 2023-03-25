@@ -57,7 +57,7 @@ const clickedButton = () => {
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 640px) {
     .app__button {
         width: 2rem;
         margin: 2px;
