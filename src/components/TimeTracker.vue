@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { reactive, watch } from 'vue';
+import { reactive, watch, computed } from 'vue';
 import BaseButton from '@/components/shared/BaseButton.vue';
 import BaseTimer from '@/components/shared/BaseTimer.vue';
 import { usetimeTrackerStore } from '@/stores/timeTracker';
@@ -52,6 +52,10 @@ watch(
         state.elapsedTime = usetimeTrackerStore().elapsedTime;
     }
 );
+
+const screenSize = computed(() => {
+    return window.screen.availWidth;
+});
 </script>
 
 <template>
@@ -68,22 +72,34 @@ watch(
             @click="clockIn()"
             v-if="!state.checkIn"
         >
-            <span>Entrar</span>
+            <span v-if="screenSize > 425">Entrar</span>
+            <div v-else>
+                <font-awesome-icon :icon="['fas', 'play']" />
+            </div>
         </BaseButton>
 
-        <div v-else>
+        <div
+            class="display-flex"
+            v-else
+        >
             <BaseButton
                 :extra-class="'button--secondary'"
                 @click="clockPause()"
             >
-                <span>Pausar</span>
+                <span v-if="screenSize > 425">Pausar</span>
+                <div v-else>
+                    <font-awesome-icon :icon="['fas', 'pause']" />
+                </div>
             </BaseButton>
 
             <BaseButton
                 :extra-class="'button--danger'"
                 @click="clockOut()"
             >
-                <span>Salir</span>
+                <span v-if="screenSize > 425">Salir</span>
+                <div v-else>
+                    <font-awesome-icon :icon="['fas', 'stop']" />
+                </div>
             </BaseButton>
         </div>
     </div>
