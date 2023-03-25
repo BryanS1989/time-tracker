@@ -1,6 +1,21 @@
 # time-tracker
 
-This template should help get you started developing with Vue 3 in Vite.
+Sistema que permite fichar y desfichar a los empleados de manera fácil y visual. Desarrollado con Vue 3 en Vite.
+
+## LIVE DEMO
+
+Probar la demo de [TIME-TRACKER] (https://bryans1989-time-tracker.netlify.app/)
+
+## Features
+
+-   Mostrar el tiempo que el empleado lleva fichado.
+    -   Si el empleado se encuentra trabajando se verá en tiempo real como avanza su jornada.
+    -   Si el empleado se encuentra desfichado mostrará el tiempo que ha realizado.
+-   Mostrar un botón para fichar que cambiará según el estado del empleado.
+    -   Si se encuentra trabajando mostraremos un botón de Salir.
+    -   Si se encuentra desfichado mostraremos el botón de Entrar.
+-   Mostrar un avatar que nos indique el estado del empleado (marcar con colores), el nombre y apellido.
+-   Mostrar dos tipos de desplegables distintos al pasar por encima del icono de desplegar (datos estáticos).
 
 ## Recommended IDE Setup
 
