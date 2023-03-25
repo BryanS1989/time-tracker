@@ -64,6 +64,10 @@ div[class^='status-'] {
 }
 
 @media (max-width: 425px) {
+    .profile--preview {
+        width: auto;
+    }
+
     .profile--name {
         display: none;
     }
