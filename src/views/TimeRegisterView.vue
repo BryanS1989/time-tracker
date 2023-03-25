@@ -14,7 +14,7 @@ import ProfilePreview from '@/components/user/ProfilePreview.vue';
 </template>
 
 <style>
-@media (max-width: 425px) {
+@media (max-width: 768) {
     main {
         padding: 8px;
     }
