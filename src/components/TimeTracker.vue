@@ -72,7 +72,7 @@ const screenSize = computed(() => {
             @click="clockIn()"
             v-if="!state.checkIn"
         >
-            <span v-if="screenSize > 425">Entrar</span>
+            <span v-if="screenSize > 768">Entrar</span>
             <div v-else>
                 <font-awesome-icon :icon="['fas', 'play']" />
             </div>
@@ -86,7 +86,7 @@ const screenSize = computed(() => {
                 :extra-class="'button--secondary'"
                 @click="clockPause()"
             >
-                <span v-if="screenSize > 425">Pausar</span>
+                <span v-if="screenSize > 768">Pausar</span>
                 <div v-else>
                     <font-awesome-icon :icon="['fas', 'pause']" />
                 </div>
@@ -96,7 +96,7 @@ const screenSize = computed(() => {
                 :extra-class="'button--danger'"
                 @click="clockOut()"
             >
-                <span v-if="screenSize > 425">Salir</span>
+                <span v-if="screenSize > 768">Salir</span>
                 <div v-else>
                     <font-awesome-icon :icon="['fas', 'stop']" />
                 </div>
