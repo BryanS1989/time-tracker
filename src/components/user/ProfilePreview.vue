@@ -28,7 +28,9 @@ watch(
             />
             <div :class="`status-${state.status} circle`"></div>
         </figure>
-        <p class="profile--name text-xl text-strong mx-1">{{ state.name }}</p>
+        <p class="profile--name text-xl text-strong mx-1 text-center text-unselectable">
+            {{ state.name }}
+        </p>
     </section>
 </template>
 
