@@ -73,6 +73,10 @@
     margin-bottom: 32px;
 }
 
+.p-0 {
+    padding: 0;
+}
+
 .p-1 {
     padding: 8px;
 }
@@ -115,6 +119,10 @@
     padding-bottom: 32px;
 }
 
+.rounded-sm {
+    border-radius: var(--border-radius-sm);
+}
+
 .rounded {
     border-radius: var(--border-radius);
 }
@@ -140,6 +148,18 @@
 
 .text-strong {
     font-weight: 700;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-unselectable {
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .text-sm {
