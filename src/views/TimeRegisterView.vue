@@ -7,24 +7,30 @@ import type { MenuItem } from '@/interfaces/MenuItem.interface';
 const menuItems: MenuItem[] = [
     {
         text: 'Mis cuentas',
+        custom: false,
         position: 'left',
         children: [
             {
                 text: 'Cuenta 1',
+                custom: true,
             },
             {
                 text: 'Cuenta 2',
+                custom: true,
             },
         ],
     },
     {
         text: 'Vista empleado',
+        custom: false,
     },
     {
         text: 'Mi perfil',
+        custom: false,
     },
     {
         text: 'Cerrar sesión',
+        custom: false,
     },
 ];
 </script>

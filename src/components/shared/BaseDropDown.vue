@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { reactive } from 'vue';
 import type { MenuItem } from '@/interfaces/MenuItem.interface';
+import ProfilePreview from '@/components/user/ProfilePreview.vue';
 
 defineProps({
     disabled: {
@@ -60,12 +61,20 @@ const fold = () => {
                     :key="index"
                     class="dropdown--item text-center"
                 >
-                    <p
-                        v-if="!item.children"
-                        class="p-2 text-unselectable"
-                    >
-                        {{ item.text }}
-                    </p>
+                    <div v-if="!item.children">
+                        <p
+                            v-if="!item.custom"
+                            class="p-2 text-unselectable"
+                        >
+                            {{ item.text }}
+                        </p>
+                        <ProfilePreview
+                            v-else
+                            :show-current-status="false"
+                            :show-las-time="true"
+                            class="p-1"
+                        ></ProfilePreview>
+                    </div>
                     <BaseDropDown
                         v-else
                         :list-items="item.children"
