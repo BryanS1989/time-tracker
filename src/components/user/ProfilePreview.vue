@@ -105,7 +105,7 @@ div[class^='status-'] {
     border: 0.5px solid var(--black-lighter);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 640px) {
     .profile--preview {
         width: auto;
     }

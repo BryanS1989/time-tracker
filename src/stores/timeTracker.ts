@@ -3,6 +3,7 @@ import { defineStore } from 'pinia';
 import type Employee from '@/interfaces/Employee.interface';
 import type WorkEntry from '@/interfaces/WorkEntry.interface';
 import axios from '@/plugins/axios';
+import { WorkStatus } from '@/Enums/enums';
 
 export const usetimeTrackerStore = defineStore('timeTracker', () => {
     const workEntryData = reactive({
@@ -95,7 +96,8 @@ export const usetimeTrackerStore = defineStore('timeTracker', () => {
                     .then((response) => {
                         console.log('[usetimeTrackerStore] [postEntry] response: ', response);
 
-                        getWorkEntries();
+                        // getWorkEntries();
+                        workEntryData.employee.workStatus = WorkStatus.Online;
                     })
                     .catch((error) => {
                         console.log('[usetimeTrackerStore] [postEntry] error: ', error);
@@ -130,7 +132,8 @@ export const usetimeTrackerStore = defineStore('timeTracker', () => {
                     .then((response) => {
                         console.log('[usetimeTrackerStore] [postEntry] response: ', response);
 
-                        getWorkEntries();
+                        // getWorkEntries();
+                        workEntryData.employee.workStatus = WorkStatus.Offline;
                     })
                     .catch((error) => {
                         console.log('[usetimeTrackerStore] [postEntry] error: ', error);
@@ -143,12 +146,19 @@ export const usetimeTrackerStore = defineStore('timeTracker', () => {
         );
     }
 
+    function pauseClock(isPaused: boolean) {
+        console.log('[STORE] [usetimeTrackerStore] [pauseClock]');
+
+        workEntryData.employee.workStatus = isPaused ? WorkStatus.Paused : WorkStatus.Online;
+    }
+
     return {
         userName,
         userStatus,
         elapsedTime,
         clockIn,
         clockOut,
+        pauseClock,
         getWorkEntries,
     };
 });

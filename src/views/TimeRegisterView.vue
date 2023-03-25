@@ -50,7 +50,7 @@ const menuItems: MenuItem[] = [
 </template>
 
 <style>
-@media (max-width: 768) {
+@media (max-width: 640px) {
     main {
         padding: 8px;
     }
