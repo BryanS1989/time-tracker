@@ -4,7 +4,7 @@ Sistema que permite fichar y desfichar a los empleados de manera fácil y visual
 
 ## LIVE DEMO
 
-Probar la demo de [TIME-TRACKER] (https://bryans1989-time-tracker.netlify.app/)
+Probar la demo de [TIME-TRACKER](https://bryans1989-time-tracker.netlify.app/)
 
 ## Features
 
